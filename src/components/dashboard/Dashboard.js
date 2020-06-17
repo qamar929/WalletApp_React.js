@@ -47,7 +47,7 @@ if(nextProps.wallets)
                 <div className="container">
                     <div className="row">
                         <div className="col-md-12">
-                            <h1 className="display-4 text-center">My Wallets</h1>
+                            <h1 className="display-4 text-center h1">My Wallets</h1>
                             <br />
                             <div className="btn-group">
                                 <button type="button" className="btn btn-info btn-lg dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
@@ -94,5 +94,6 @@ if(nextProps.wallets)
 const mapStateToProps = (state) => ({
 	
     wallets:state.wallet.wallets 
+    
 });
 export default connect(mapStateToProps,{getWallets})(Dashboard)

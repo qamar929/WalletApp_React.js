@@ -9,10 +9,10 @@ class Welcome extends Component {
         <div className="container">
             <div className="row">
                 <div className="col-md-12 text-center">
-                    <h1 className="display-3 mb-4">Personal Expense Manager</h1>
-                    <p className="lead">
+                    <h1 className="display-3 mb-4 h1" >Personal Expense Manager</h1>
+                    <h3 className="lead h1">
                         Create your account to manage your daily expense and hisab kitab
-                    </p>
+                    </h3>
                     <hr />
                     <a href="register.html" className="btn btn-lg btn-primary mr-2">
                         Sign Up
