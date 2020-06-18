@@ -4,7 +4,7 @@ import {GET_ERRORS, GET_WALLET,GET_TRANSACTION, DELETE_WALLET,GETWALLET,GET_TRAN
 
 export const createWallet = (newWallet , history) => async dispath => {
 
-   await axios.post('http://localhost:8080/wallet', newWallet)
+   await axios.post('/wallet', newWallet)
     .then((res) =>{
 
      
@@ -25,7 +25,7 @@ export const createWallet = (newWallet , history) => async dispath => {
 
 export const updateWallet = (id,updateWaller , history) => async dispath => {
   
-   await axios.put(`http://localhost:8080/wallet/${id}`, updateWaller)
+   await axios.put(`/wallet/${id}`, updateWaller)
     .then((res) =>{
 
       
@@ -45,7 +45,7 @@ export const updateWallet = (id,updateWaller , history) => async dispath => {
 
 export const updateWalletBal = (id,updateWaller , history) => async dispath => {
   
-   await axios.put(`http://localhost:8080/wallet/${id}`, updateWaller)
+   await axios.put(`/wallet/${id}`, updateWaller)
     .then((res) =>{
 
       
@@ -64,7 +64,7 @@ export const updateWalletBal = (id,updateWaller , history) => async dispath => {
 
 export const getWallets = () => async dispath => {
 
-  await axios.get('http://localhost:8080/wallet')
+  await axios.get('/wallet')
    .then((res) =>{
 
       dispath({type:GET_WALLET,payload:res.data})
@@ -77,7 +77,7 @@ export const getWallets = () => async dispath => {
 
 export const getWallet = (id) => async dispath => {
 
-   await axios.get(`http://localhost:8080/wallet/${id}`)
+   await axios.get(`/wallet/${id}`)
     .then((res) =>{
  
        dispath({type:GETWALLET,payload:res.data})
@@ -89,7 +89,7 @@ export const getWallet = (id) => async dispath => {
  }
 export const deleteWallet = (id) => async dispath => {
 
-   await axios.delete( 'http://localhost:8080/wallet/'+id)
+   await axios.delete( '/wallet/'+id)
     .then((res) =>{
  
        dispath({type:DELETE_WALLET,payload:id})
@@ -106,7 +106,7 @@ export const deleteWallet = (id) => async dispath => {
  
 export const createTransaction= (newTrans , history,wallet_id) => async dispath => {
   
-   await axios.post(`http://localhost:8080/transaction/${wallet_id}`, newTrans)
+   await axios.post(`/transaction/${wallet_id}`, newTrans)
     .then((res) =>{
 
     
@@ -125,7 +125,7 @@ export const createTransaction= (newTrans , history,wallet_id) => async dispath 
 
 export const getTransactions= (wallet_id) => async dispath => {
 
-   await axios.get(`http://localhost:8080/transaction/${wallet_id}`)
+   await axios.get(`/transaction/${wallet_id}`)
     .then((res) =>{
 
        dispath({type:GET_TRANSACTIONS,payload:res.data})
@@ -138,7 +138,7 @@ export const getTransactions= (wallet_id) => async dispath => {
 
  export const getTransaction= (wallet_id,id) => async dispath => {
    
-   await axios.get(`http://localhost:8080/transaction/${wallet_id}/${id}`)
+   await axios.get(`/transaction/${wallet_id}/${id}`)
     .then((res) =>{
 
        dispath({type:GET_TRANSACTION,payload:res.data})
@@ -152,7 +152,7 @@ export const getTransactions= (wallet_id) => async dispath => {
 export const deleteTransaction = (wallet_id,id) => async dispath => {
 
 
-   await axios.delete( `http://localhost:8080/transaction/${wallet_id}/${id}`)
+   await axios.delete( `/transaction/${wallet_id}/${id}`)
     .then((res) =>{
  
 
@@ -165,9 +165,10 @@ export const deleteTransaction = (wallet_id,id) => async dispath => {
  }
 
 
- export const updateTransaction = (id,wallet_id,updateTransaction , history) => async dispath => {
+ export const updateTransaction = (id,wallet_id,updatedTransaction , history) => async dispath => {
 
-   await axios.put(`http://localhost:8080/transaction/${wallet_id}/${id}`, updateTransaction)
+  // alert(updatedTransaction.amount)
+   await axios.put(`/${wallet_id}/${id}`, updatedTransaction)
     .then((res) =>{
 
      

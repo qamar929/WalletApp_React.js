@@ -48,7 +48,7 @@ this.setState({errors:nextProps.errors})
                 <div className="container">
                     <div className="row">
                         <div className="col-md-8 m-auto">
-                            <h5 className="display-4 text-center">Create Wallet</h5>
+                            <h5 className="display-4 text-center text-white">Create Wallet</h5>
                             <hr />
                             <form onSubmit={(event)=>this.submitHandler(event)}>
                                 <div className="form-group">

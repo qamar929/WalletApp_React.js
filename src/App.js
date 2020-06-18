@@ -13,6 +13,7 @@ import UpdateWallet from './components/dashboard/dashboardOperations/UpdateWalle
 import Transaction from './components/transactions/Transaction';
 import AddTransaction from './components/transactions/transactionOperations/AddTransaction';
 import EditTransactions from './components/transactions/transactionOperations/EditTransactions';
+import 'react-app-polyfill/stable'
 function App() {
   return (
     <Provider store={store}>

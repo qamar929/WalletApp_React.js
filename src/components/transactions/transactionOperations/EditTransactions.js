@@ -53,6 +53,7 @@ class EditTransactions extends Component {
     }
     handleSubmit = (event) => {
 
+        
         let updateTransaction = {
             id:this.state.id,
             amount: this.state.amount,
@@ -61,6 +62,7 @@ class EditTransactions extends Component {
             type: this.state.type
         }
 
+       
         this.props.updateTransaction(this.state.id,this.props.match.params.id,updateTransaction, this.props.history)
         event.preventDefault();
     }
@@ -83,8 +85,8 @@ class EditTransactions extends Component {
                             <Link to={`/transactions/${id}`} className="btn btn-light">
                                 Back to Wallet
             </Link>
-                            <h4 className="display-4 text-center h1">Update Transaction</h4>
-                            <p className="lead text-center h1">{this.state.name} Account</p>
+                            <h4 className="display-4 text-center text-white">Update Transaction</h4>
+                            <p className="lead text-center text-white">{this.state.name} Account</p>
                             <form onSubmit={this.handleSubmit}>
                                 <div className="form-group">
                                     <input type="number" min="1" value={amount} onChange={event => this.changeHandler(event, "amount")} className="form-control form-control-lg" placeholder="Amount" />
@@ -93,7 +95,7 @@ class EditTransactions extends Component {
                                     <textarea className="form-control form-control-lg" value={description} onChange={event => this.changeHandler(event, "description")} placeholder="Description"></textarea>
                                 </div>
                                 <div className="form-group radio">
-                                    <label htmlFor="exampleFormControlTextarea1">Transaction Type : </label>
+                                    <label htmlFor="exampleFormControlTextarea1 ">Transaction Type : </label>
                                     <div className="form-check form-check-inline">
                                         <input  className="form-check-input" type="radio" id="income" checked={type === 1} onChange={event => this.changeHandler(event, "type")} name="type" value="1"  />
                                         <label className="form-check-label" htmlFor="income">Income</label>

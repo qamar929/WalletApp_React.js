@@ -101,17 +101,17 @@ class Transaction extends Component {
             (<TransactionItems key={transaction.id} transaction={transaction} wallet_id={id} />))
         return (
             <div className="container">
-                <Link to="/dashboard" className="btn btn-default btn-lg mb-3">
+                <Link to="/dashboard" className="btn btn-default btn-lg mb-3 text-white">
                     Back
         </Link>
                 <Link to={`/trns/add/${id}`} className="btn btn-info btn-lg mb-3">
-                    <i className="fas fa-plus-circle h1"> Record new Transaction</i>
+                    <i className="fas fa-plus-circle "> Record new Transaction</i>
                 </Link>
                 <br />
                 <div className="card text-center">
                     <div className="card-header bg-success text-white">
-                        <h4 className="h1">{this.state.name} Account Balance</h4>
-                        <h1 className="h1">Rs. {this.state.currentBalance}</h1>
+                        <h4 className="text-white">{this.state.name} Account Balance</h4>
+                        <h1 className="text-white">Rs. {this.state.currentBalance}</h1>
                     </div>
                 </div>
                 <hr />

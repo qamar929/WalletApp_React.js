@@ -26,10 +26,10 @@ import {connect} from 'react-redux'
     const transaction = this.props.transaction
     return (
      
-        <tr className="table">
+        <tr className="table text-white">
         <td>{transaction.transactionDate}</td>
         <td>{transaction.description}</td>
-        <td className="text-danger">{transaction.amount}</td>
+        <td className="text-white">{transaction.amount}</td>
         <td>
             <Link className="text-info" to={`/trns/edit/${id}/${Tid}`}><i className="fas fa-edit fa-2x"></i></Link>
             <Link className="text-danger" to={`/transactions/${id}`} onClick={()=>this.deleteBtnClick()}><i className="fas fa-trash fa-2x"></i></Link>
